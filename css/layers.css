@@ -1,0 +1,93 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	text-align: center;
+}
+h3 {
+	margin: 30px auto;
+}
+.show,
+img {
+	width: 300px;
+	height: 200px;
+}
+/*遮罩层父级样式*/
+
+.show {
+	position: relative;
+	margin: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+	display: inline-block;
+	/*父级缩放效果动画*/
+	
+	transition: all 1.5s;
+	-webkit-transition: all 1.5s;
+	-moz-transition: all 1.5s;
+	-ms-transition: all 1.5s;
+}
+/*遮罩层样式*/
+
+.layer {
+	position: absolute;
+	background-color: black;
+	opacity: 0.5;
+	/*遮罩层显示动画*/
+	
+	transition: all 1.5s;
+	-webkit-transition: all 1.5s;
+	-moz-transition: all 1.5s;
+	-ms-transition: all 1.5s;
+	color: white;
+	font-weight: bold;
+	overflow: hidden;
+	line-height: 200px;
+}
+#layer1 {
+	width: 300px;
+	height: 200px;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+/*从无到有直接显示遮罩层*/
+
+.show:hover #layer1 {
+	display: block;
+}
+#layer2 {
+	width: 0px;
+	height: 0px;
+	top: 100px;
+	left: 150px;
+}
+/*缩放*/
+
+.scale:hover {
+	transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+}
+/*从中心到四角显示遮罩层动画*/
+
+.show:hover #layer2 {
+	width: 300px;
+	height: 200px;
+	top: 0px;
+	left: 0px;
+}
+#layer3 {
+	width: 300px;
+	height: 0px;
+	top: 0px;
+	left: 0px;
+}
+/*从上到下显示遮罩层动画*/
+
+.show:hover #layer3 {
+	height: 200px;
+}
